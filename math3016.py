@@ -100,8 +100,8 @@ def accGradientDescent(x,n,a):
     xv = [mcCormick(x)]
     for i in range(1,n-1):
         y = x + i/(i+3)*(x-xTmp)
-        x = y - a*gradMcCormick(y)
         xTmp = x
+        x = y - a*gradMcCormick(y)
         xv.append(mcCormick(x))
     plt.plot(range(n-1),xv)
     plt.show()
@@ -168,7 +168,7 @@ def gradBohachevsky(x):
     
 def hasBohachevsky(x):
     return np.array([[2 + 2.7 * np.pi ** 2 * np.cos(3 * np.pi * x[0]), 0],
-                     [0 ,2 + 6.1 * np.pi ** 2 * np.sin(4 * np.pi * x[1])]])
+                     [0 ,2 + 6.4 * np.pi ** 2 * np.sin(4 * np.pi * x[1])]])
     
 def newton(x,n):
     startPoint = x
